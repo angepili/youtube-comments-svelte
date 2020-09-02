@@ -1,17 +1,29 @@
 <script>
 	import Comments from './Comments.svelte';
+	import Video from './Video.svelte';
+	import Related from './Related.svelte';
+	import Header from './Header.svelte';
 	import 'bulma/css/bulma.css'
 </script>
 
-<svelte:head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-</svelte:head>
+	<Header />
 
-<div class="container">
-	<div class="columns" style="background:red">
-		<div class="column is-two-thirds">
-			<Comments videoId={'9EcjWd-O4jI'} />
+	<div class="section section--video">
+		<div class="columns">
+			<!-- <div class="column is-two-thirds">
+				<Video videoId={'9EcjWd-O4jI'} />
+				<Comments videoId={'9EcjWd-O4jI'} />
+			</div>
+			<div class="column is-one-third">
+				<Related videoId={'9EcjWd-O4jI'} />
+			</div> -->
 		</div>
-		<div class="columns is-one-third"></div>
 	</div>
-</div>
+
+
+<style>
+	.section--video {
+		color: #000;
+		background-color: #f9f9f9;
+	}
+</style>

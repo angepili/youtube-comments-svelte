@@ -28,7 +28,3 @@
         <Comment {comment} />
     {/each}
 </div>
-
-<style>
-
-</style>
