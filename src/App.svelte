@@ -15,7 +15,10 @@
 <section>
 	
 	{#if (videoId || idToSearch)}
-		<Header on:setVideo={e=>idToSearch=e.detail} />
+		<Header on:setVideo={e=>{
+			videoId=null;
+			idToSearch=e.detail
+		}} />
 		{#if videoId}
 			<section class="video-main">
 				<div class="container">
@@ -41,6 +44,7 @@
 
 <style>
 	.video-main {
-		margin: 30px 0;
+		padding: 90px 0;
+		background-color: #f6f6f6;
 	}
 </style>

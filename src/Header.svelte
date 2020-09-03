@@ -11,7 +11,7 @@
 </script>
 
 
-  <nav class="navbar">
+  <nav class="navbar is-fixed-top">
     <div class="container">
       <div class="navbar-brand">
         <div id="logo">
@@ -25,16 +25,18 @@
       </div>
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
-          <div class="field has-addons has-addons-fullwidth">
-            <div class="control">
-              <input class="input" type="text" placeholder="Cerca" bind:value={video}>
+          <form on:submit|preventDefault={()=>dispatch('setVideo',video)}>
+            <div class="field has-addons has-addons-fullwidth">
+              <div class="control">
+                <input class="input" type="text" placeholder="Cerca" bind:value={video}>
+              </div>
+              <div class="control">
+                <button class="button is-light" on:click={()=>dispatch('setVideo',video)} >
+                  <IconSearch />
+                </button>
+              </div>
             </div>
-            <div class="control">
-              <button class="button is-light" on:click={()=>dispatch('setVideo',video)} >
-                <IconSearch />
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -54,5 +56,6 @@
   }
   .navbar {
     padding: 15px 0 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
   }
 </style>

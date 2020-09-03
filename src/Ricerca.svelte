@@ -62,7 +62,8 @@
 
 <style>
     section {
-        margin: 30px 0;
+        padding: 90px 0;
+        background: #f6f6f6;
     }
     .title span {
         font-size: 16px;
