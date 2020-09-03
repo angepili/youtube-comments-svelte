@@ -16,7 +16,7 @@
         args = {
             id: videoId,
             part: 'snippet,player,statistics',
-            maxResults : 100,
+            maxResults : 1,
             key : API_KEY
         }
 

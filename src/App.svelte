@@ -4,20 +4,21 @@
 	import Related from './Related.svelte';
 	import Header from './Header.svelte';
 	import Ricerca from './Ricerca.svelte';
+	import Home from './Home.svelte'
 	import 'bulma/css/bulma.css'
 
-	let title ='';
+	let title = '';
 	let videoId = '';
 	let idToSearch = '';
-
 </script>
 
-	<Header on:setVideo={e=>idToSearch=e.detail} />
-
-		
-		<div class="section section--video">
-			<div class="container">
-				{#if videoId}
+<section>
+	
+	{#if (videoId || idToSearch)}
+		<Header on:setVideo={e=>idToSearch=e.detail} />
+		{#if videoId}
+			<section class="video-main">
+				<div class="container">
 					<div class="columns">
 						<div class="column is-two-thirds">
 							<Video videoId={videoId} />
@@ -27,17 +28,19 @@
 							<Related videoId={videoId} />
 						</div>
 					</div>
-				{:else if idToSearch }
-					<Ricerca {idToSearch} />
-				{/if}
-		</div>
-	</div>
+				</div>
+			</section>
+		{:else if idToSearch }
+			<Ricerca {idToSearch} on:setVideo={e=>videoId=e.detail} />
+		{/if}
+	{:else}
+		<Home on:setVideo={e=>idToSearch=e.detail}/>
+	{/if}
 
+</section>
 
 <style>
-	.section--video {
-		color: #000;
-		background-color: #f9f9f9;
-		margin-top: 60px;
+	.video-main {
+		margin: 30px 0;
 	}
 </style>

@@ -13,7 +13,7 @@
 					    part: 'snippet',
 					    type: 'video',
 					    key : API_KEY,
-					    maxResults: 20
+					    maxResults: 10
 					}
 								
     onMount(async () => {

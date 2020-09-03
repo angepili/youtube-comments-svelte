@@ -10,7 +10,7 @@
     const args = {
         videoId,
         part: 'snippet,replies',
-        maxResults : 100,
+        maxResults : 10,
         key : API_KEY
     }
 
