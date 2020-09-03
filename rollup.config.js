@@ -4,6 +4,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
+import svelteSVG from "rollup-plugin-svelte-svg";
+
 import dotenv from 'dotenv';
 import replace from '@rollup/plugin-replace';
 
@@ -57,7 +59,7 @@ export default {
 			},
 			preprocess: preprocess()
 		}),
-
+		
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
@@ -81,7 +83,9 @@ export default {
 		// instead of npm run dev), minify
 		production && terser(),
 
-		postcss()
+		postcss(),
+
+		svelteSVG(),
 	],
 	watch: {
 		clearScreen: false

@@ -33,7 +33,7 @@
                 </div>
                 <div class="column is-half">
                     <h2>{title}</h2>
-                    <strong>{  moment(publishedAt).format("DD MMM YYYY") }</strong>
+                    <p>{  moment(publishedAt).fromNow() }</p>
                 </div>
             </div>
         </div>
@@ -49,5 +49,10 @@
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 10px;
+    }
+    p {
+        color: #606060;
+        font-weight: 400;
+        font-size: 13px;
     }
 </style>
